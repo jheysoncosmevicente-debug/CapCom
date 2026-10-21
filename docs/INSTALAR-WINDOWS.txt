@@ -1,0 +1,18 @@
+CAPCOM PARA WINDOWS (Windows 10 u 11, 64 bits)
+==============================================
+
+1) Copia la carpeta CapCom.vst3 a:
+   C:\Program Files\Common Files\VST3
+   (Windows pedirá permiso de administrador: acepta.)
+
+2) CapCom.exe es la app para procesar audios sin editor. Puedes dejarla donde quieras.
+   Si Windows muestra "Windows protegió su PC": Más información > Ejecutar de todas formas
+   (aparece porque el programa no está firmado; es normal en proyectos gratuitos).
+
+3) Abre tu editor
+   - DaVinci Resolve: Preferencias > Sistema > Efectos de audio > revisa que en "Efectos VST" esté
+     C:\Program Files\Common Files\VST3 (si no, pulsa Agregar) > Guardar > reinicia DaVinci.
+     Luego, en Fairlight o en el mezclador, busca CapCom en VST.
+   - Premiere Pro: Preferencias > Audio > Administrador de plugins de audio > Buscar plugins.
+     Luego Efectos > Efectos de audio > CapCom.
+   - Reaper, FL Studio, Ableton, Cubase: vuelve a escanear los plugins VST3.

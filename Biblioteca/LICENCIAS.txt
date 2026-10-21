@@ -1,0 +1,36 @@
+BIBLIOTECA CAPCOM — ORIGEN Y LICENCIAS
+=======================================
+
+Todos estos sonidos se pueden usar gratis en cualquier video, también comercial o monetizado, sin dar crédito.
+Están en WAV de 48 kHz y 24 bits.
+
+
+1) SONIDOS GENERADOS POR CÓDIGO — CC0 (dominio público)
+-------------------------------------------------------
+Los creó el autor de CapCom con tools/biblioteca.py y el motor del plugin, y los libera como CC0 1.0
+(https://creativecommons.org/publicdomain/zero/1.0/deed.es): puedes usarlos, modificarlos y compartirlos sin pedir permiso.
+
+Son todos los archivos de las carpetas Radio, Telefono, Cinta y TV, Drama y Foley, y además:
+  Ambientes/cuarto_vacio_room_tone_bucle_30s.wav
+  Ambientes/zumbido_electrico_60hz_bucle_30s.wav
+  Policia/sirena_lejana_sintetica_bucle_30s.wav
+  Policia/alarma_de_auto_cerca_20s.wav
+  Policia/alarma_de_auto_lejana_20s.wav
+
+Para regenerarlos: uv run --with numpy --with scipy --with soundfile python tools/biblioteca.py Biblioteca
+
+
+2) WIKIMEDIA COMMONS — Dominio público / CC0
+--------------------------------------------
+Convertidos a WAV desde los originales:
+
+  Policia/sirena_policia_lejana_noche_29s.wav       https://commons.wikimedia.org/wiki/File:American_police_siren_i.ogg   (Dominio público)
+  Policia/sirenas_wail_yelp_camion_bomberos_14s.wav https://commons.wikimedia.org/wiki/File:Whelen.ogg                    (CC0)
+  Ambientes/monitor_cardiaco_hospital_28s.wav       https://commons.wikimedia.org/wiki/File:Heart_Monitor_Beep--freesound.org.mp3  (CC0)
+  Policia/helicoptero_sobre_barrio_22s.wav          https://commons.wikimedia.org/wiki/File:Helicopter_over_quiet_neighbourhood.ogg (Dominio público)
+
+
+¿MÁS SONIDOS?
+-------------
+Lluvia, tormenta, ciudad, puertas, pasos, etc.: en https://mixkit.co/free-sound-effects/ hay muchos gratis para
+videos comerciales. Su licencia no permite redistribuirlos, por eso no vienen aquí: descárgalos tú desde su web.

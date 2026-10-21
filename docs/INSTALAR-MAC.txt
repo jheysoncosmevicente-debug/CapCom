@@ -1,0 +1,26 @@
+CAPCOM PARA MAC (Apple Silicon M1/M2/M3/M4 e Intel, macOS 11 Big Sur o más nuevo)
+==========================================================================
+
+1) Copia los archivos
+   En Finder, menú Ir > Ir a la carpeta... (Cmd + Shift + G) y pega cada ruta:
+
+   CapCom.component  ->  ~/Library/Audio/Plug-Ins/Components
+   CapCom.vst3       ->  ~/Library/Audio/Plug-Ins/VST3
+   CapCom.app        ->  Aplicaciones (opcional: para procesar audios sin editor)
+
+2) Quita el bloqueo de macOS (el plugin no está firmado por Apple)
+   Abre Terminal y pega esta línea:
+
+   xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/Components/CapCom.component ~/Library/Audio/Plug-Ins/VST3/CapCom.vst3 /Applications/CapCom.app
+
+   Si la app igual no abre: Ajustes del Sistema > Privacidad y seguridad > "Abrir igualmente".
+
+3) Abre tu editor
+   - DaVinci Resolve: Preferencias > Sistema > Efectos de audio > en "Efectos VST" pulsa Agregar y elige
+     ~/Library/Audio/Plug-Ins/VST3 > Guardar > reinicia DaVinci. En Fairlight o en el mezclador busca CapCom
+     (en VST o en AU).
+   - Premiere Pro: Preferencias > Audio > Administrador de plugins de audio > Buscar plugins.
+     Luego Efectos > Efectos de audio > CapCom.
+   - Logic, GarageBand, Ableton, Reaper: aparece solo al abrirlos (en AU o VST3).
+
+   Si no aparece, en Terminal: killall -9 AudioComponentRegistrar   y vuelve a abrir el editor.
