@@ -274,18 +274,19 @@ void EqEditor::animatePanel (bool in, std::function<void()> onDone)
     setFrame (in ? 0.0f : 1.0f);
     panelAnimating = ! in;
 
+    const juce::Component::SafePointer<EqEditor> safe (this);
     panelAnim = juce::ValueAnimatorBuilder {}
         .withDurationMs (in ? 280.0 : 200.0)
         .withEasing (in ? juce::Easings::createCubicBezier (0.16f, 1.0f, 0.3f, 1.0f)    // ease-out: arranca rapido, frena suave
                         : juce::Easings::createCubicBezier (0.7f, 0.0f, 0.84f, 0.0f))   // ease-in: arranca suave, se va rapido
         .withValueChangedCallback ([setFrame, in] (float v) { setFrame (in ? v : 1.0f - v); })
-        .withOnCompleteCallback ([this, in, onDone]
+        .withOnCompleteCallback ([this, safe, in, onDone]
         {
             if (panel != nullptr && in) { panel->setTransform ({}); panel->setAlpha (1.0f); }
             panelAnimating = false;
             // Fuera del animador: onDone puede destruir el panel y arrancar otra animacion.
             if (onDone)
-                juce::MessageManager::callAsync ([safe = juce::Component::SafePointer<EqEditor> (this), onDone]
+                juce::MessageManager::callAsync ([safe, onDone]
                 {
                     if (safe != nullptr) onDone();
                 });
